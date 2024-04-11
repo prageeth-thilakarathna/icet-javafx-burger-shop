@@ -7,17 +7,17 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 @Getter
-public class loadDriver {
-    private static loadDriver instance;
+public class LoadDriver {
+    private static LoadDriver instance;
     private final Connection connection;
 
-    private loadDriver() throws SQLException {
+    private LoadDriver() throws SQLException {
         connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/burger_shop?autoReconnect=true&useSSL=false", "root", "200284");
     }
 
-    public static loadDriver getInstance() throws SQLException {
+    public static LoadDriver getInstance() throws SQLException {
         if(instance==null){
-            instance=new loadDriver();
+            instance=new LoadDriver();
         }
         return instance;
     }

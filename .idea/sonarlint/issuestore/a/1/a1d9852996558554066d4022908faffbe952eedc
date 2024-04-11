@@ -1,0 +1,73 @@
+
+w
+java:S1141°"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿJ$1149d2ad-744a-415c-9b5d-f1272f3abc8e
+—
+java:S1488x"[Immediately return this expression instead of assigning it to the temporary variable "res".(ÔÕüºJ$4d0f8417-aedb-4d30-83b3-b7e5a83fc32a
+˜
+java:S1488ƒ"[Immediately return this expression instead of assigning it to the temporary variable "res".(ÔÕüºJ$976e4957-206b-441d-9b0c-4a563035c872
+˜
+java:S1488"[Immediately return this expression instead of assigning it to the temporary variable "res".(ÔÕüºJ$53a45602-6d7a-4389-baaf-0e744a4086a5
+£
+java:S1488Ğ"aImmediately return this expression instead of assigning it to the temporary variable "resultSet".(××Ñ´ûÿÿÿÿJ$660e9984-1622-4b85-b9c8-0840a956a4b4
+£
+java:S1488Û"aImmediately return this expression instead of assigning it to the temporary variable "resultSet".(××Ñ´ûÿÿÿÿJ$7633a13b-5b3b-4522-b3a5-21807a8b54a8
+
+java:S1104"SMake orderID a static final constant or non-public and provide accessors if needed.(‹ü†GJ$27601db9-38e5-4ea6-b3e6-0da13cf60910
+’
+java:S1104"VMake customerID a static final constant or non-public and provide accessors if needed.(±¢÷„J$88164526-0cce-4fea-a515-add08c1c0f7a
+™
+java:S1104"XMake customerName a static final constant or non-public and provide accessors if needed.(±–ÁãÿÿÿÿÿJ$c5b6576f-3c23-48f2-8c4b-5d788258ba25
+‹
+java:S1104"OMake qty a static final constant or non-public and provide accessors if needed.(—Ìü‚J$07138198-fc56-470e-99be-6f2aebc847d0
+œ
+java:S1104"[Make customerIdError a static final constant or non-public and provide accessors if needed.(ïİş±øÿÿÿÿJ$b9ffc8a7-b3d7-4a96-9ed5-b82bf2dada41
+•
+java:S1104"TMake qtyError a static final constant or non-public and provide accessors if needed.(ÔÈŠ×úÿÿÿÿJ$d65e00a9-d876-4c2c-814f-26e196d518db
+•
+java:S1104"YMake btnPlaceOrder a static final constant or non-public and provide accessors if needed.(¢ü¿J$77c971d5-c698-4cac-b816-8ecf90b60a57
+‘
+java:S1104"UMake btnCancel a static final constant or non-public and provide accessors if needed.(ñÙ•ÓJ$ca9ade5d-1e63-4452-982a-87f0f810e1ba
+	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ï‘ÿ…ıÿÿÿÿJ$a79a1151-2b88-4d59-bfc3-e9bead781123
+‹
+java:S2095Î"GUse try-with-resources or close this "Statement" in a "finally" clause.(†—İ8ÿµúëì1J$2bc1eec6-7b1b-4da8-aacb-56f17c3af20d
+‹
+java:S2095"GUse try-with-resources or close this "Statement" in a "finally" clause.(†—İ8şµúëì1J$f70a4c9e-0609-4f21-874c-d850702c379e
+Š
+java:S2095v"GUse try-with-resources or close this "Statement" in a "finally" clause.(†—İ8€¶úëì1J$32ccd05c-8a65-407b-90af-eef116a6001e
+‹
+java:S2095Ù"GUse try-with-resources or close this "Statement" in a "finally" clause.(†—İ8şµúëì1J$ccfa53fb-fb6d-4a41-8d11-701088b04d98
+‹
+java:S2095Œ"GUse try-with-resources or close this "Statement" in a "finally" clause.(†—İ8ÿµúëì1J$f3da9ba8-d222-47ef-9f85-f3d96d9d6114
+n
+java:S1172"2Remove this unused method parameter "actionEvent".(¨ĞÍôJ$3be8879f-9d83-4ede-9fa0-c1340de69ccd
+s
+java:S1172$"2Remove this unused method parameter "actionEvent".(ÏÚ¿–ûÿÿÿÿJ$067c78a8-3060-46f0-8829-d8a055abf164
+f	java:S106)"+Replace this use of System.out by a logger.(È¹ÅˆJ$7f45e91f-ef6d-454c-89b9-42b84a7c19ee
+k	java:S106*"+Replace this use of System.out by a logger.(‰æ²şûÿÿÿÿJ$c7864e16-f77e-413f-a009-a8009f8bb282
+k	java:S106,"+Replace this use of System.out by a logger.(ÓÖÑ©ÿÿÿÿÿJ$309f0b05-39c9-4f67-8d4d-b89ec66c5d60
+k	java:S1060"+Replace this use of System.out by a logger.(ò¦®®ÿÿÿÿÿJ$d5854aa1-5fef-4fc2-8319-5c3838bc15b5
+“
+java:S37764"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(™Äæ–ùÿÿÿÿJ$ba81b133-4d22-48c1-9c26-de10469e55d6
+Z
+java:S2178N"Correct this "&" to "&&".(‰¤ç’ıÿÿÿÿJ$777b40a4-bcaf-4a37-a8b9-628d2a3ad848
+Z
+java:S2178N"Correct this "&" to "&&".(‰¤ç’ıÿÿÿÿJ$aa427018-5cc5-4809-881f-bcc9fcf1f0d6
+c
+java:S1125U"'Remove the unnecessary boolean literal.(³®ˆ˜J$c19c35b5-5fb4-4046-8601-2a5d03a9100c
+k
+java:S1172]"/Remove this unused method parameter "keyEvent".(Ê…¯¼J$afb092af-f14f-4b17-a6d4-8197faf913fd
+d	java:S108k")Either remove or fill this block of code.(É®£J$6b92872b-27d3-4c7f-bb5d-ea01f6803e50
+v
+java:S1854™"9Remove this useless assignment to local variable "resOD".(´àÙÃJ$af1ce6eb-6163-477b-a756-0061536f90fd
+v
+java:S1854Ÿ"9Remove this useless assignment to local variable "resOD".(´àÙÃJ$becde9e0-c1dd-41ca-8b40-64c25ef7f191
+g
+java:S1481™"*Remove this unused "resOD" local variable.(´àÙÃJ$8e613406-45a6-472c-b288-1fe6c7e6d7e5
+g
+java:S1481Ÿ"*Remove this unused "resOD" local variable.(´àÙÃJ$d1df839d-85b4-4b5c-94a5-d081c188d20b
+e	java:S108¢")Either remove or fill this block of code.(É®£J$31b536c3-5a31-43dd-95ea-7dc54259ccf6
+w
+java:S6397¶"5Replace this character class by the character itself.(úóØÒûÿÿÿÿJ$83c77d99-f874-4929-a7ed-e9d0ca8bb68a
+e	java:S108¼")Either remove or fill this block of code.(É®£J$eb0757fc-e681-4708-a6ce-18425ea67696
+e	java:S108Â")Either remove or fill this block of code.(É®£J$e66ae8c8-3a11-46e5-86b6-078b982fdb4d
+^	java:S125á"<This block of commented-out lines of code should be removed.(òÌ±Äûÿÿÿÿ8Ø…ìì1

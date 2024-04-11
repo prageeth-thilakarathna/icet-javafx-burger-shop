@@ -1,0 +1,10 @@
+
+|
+java:S1488"aImmediately return this expression instead of assigning it to the temporary variable "resultSet".(××Ñ´ûÿÿÿÿ
+g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(½–âıÿÿÿÿ
+]
+java:S2095"GUse try-with-resources or close this "Statement" in a "finally" clause.(†—İ
+´
+java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(½–âıÿÿÿÿ
+Q
+java:S1117"<Rename "instance" which hides the field declared at line 12.(ÍÁş{

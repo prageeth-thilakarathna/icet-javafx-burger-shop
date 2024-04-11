@@ -12,7 +12,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="512.0" prefWidth="768.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.demo.controller.placeOrderController">
    <children>
       <BorderPane prefHeight="512.0" prefWidth="768.0">
@@ -72,7 +71,7 @@
          <center>
             <VBox alignment="CENTER_LEFT" prefHeight="447.0" prefWidth="359.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label fx:id="orderID" text="B001" textFill="#211911">
+                  <Label fx:id="orderID" textFill="#211911">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -80,7 +79,7 @@
                         <Insets bottom="10.0" top="10.0" />
                      </VBox.margin>
                   </Label>
-                  <TextField fx:id="customerID">
+                  <TextField fx:id="customerID" onKeyPressed="#customerIdKeyPressed" onKeyTyped="#customerIdKeyTyped">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -118,7 +117,7 @@
          <right>
             <VBox prefHeight="447.0" prefWidth="274.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label fx:id="customerIdError" text="* only digits (0-9)" textFill="RED">
+                  <Label fx:id="customerIdError" textFill="RED">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -126,7 +125,7 @@
                         <Insets left="10.0" top="130.0" />
                      </VBox.margin>
                   </Label>
-                  <Label fx:id="qtyError" layoutX="10.0" layoutY="10.0" text="* only digits (0-9)" textFill="RED">
+                  <Label fx:id="qtyError" layoutX="10.0" layoutY="10.0" textFill="RED">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
