@@ -1,10 +1,10 @@
 
-|
-java:S1488"aImmediately return this expression instead of assigning it to the temporary variable "resultSet".(××Ñ´ûÿÿÿÿ
-g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(½–âıÿÿÿÿ
-]
-java:S2095"GUse try-with-resources or close this "Statement" in a "finally" clause.(†—İ
-´
-java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(½–âıÿÿÿÿ
-Q
-java:S1117"<Rename "instance" which hides the field declared at line 12.(ÍÁş{
+¢
+java:S1488"aImmediately return this expression instead of assigning it to the temporary variable "resultSet".(××Ñ´ûÿÿÿÿJ$3caa2f51-3002-4299-a0a9-cff05b4edf0f
+	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(½–âıÿÿÿÿJ$a5a94280-6d9f-4c56-9c27-c3a5f2478eb2
+ƒ
+java:S2095"GUse try-with-resources or close this "Statement" in a "finally" clause.(†—İJ$4c2acfd5-1fec-4a31-9512-48b4cd434b60
+Ú
+java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(½–âıÿÿÿÿJ$cc63c212-6a2e-478e-b1ae-9b3954d8c0a3
+w
+java:S1117"<Rename "instance" which hides the field declared at line 12.(ÍÁş{J$75b1d168-649b-44a3-bb92-735d44d45050

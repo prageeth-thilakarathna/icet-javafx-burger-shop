@@ -3,6 +3,7 @@ package edu.icet.demo.controller;
 import edu.icet.demo.database.LoadDriver;
 import edu.icet.demo.model.orderDetails;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -16,15 +17,25 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 
-public class placeOrderController implements Initializable {
-    public Label orderID;
-    public TextField customerID;
-    public TextField customerName;
-    public TextField qty;
-    public Label customerIdError;
-    public Label qtyError;
-    public Button btnPlaceOrder;
-    public Button btnCancel;
+public class PlaceOrderController implements Initializable {
+    @FXML
+    private Label customerNameError;
+    @FXML
+    private Label orderID;
+    @FXML
+    private TextField customerID;
+    @FXML
+    private TextField customerName;
+    @FXML
+    private TextField qty;
+    @FXML
+    private Label customerIdError;
+    @FXML
+    private Label qtyError;
+    @FXML
+    private Button btnPlaceOrder;
+    @FXML
+    private Button btnCancel;
 
     public void placeOrderAction(ActionEvent actionEvent) {
         int custId = Integer.parseInt(customerID.getText());
@@ -35,12 +46,12 @@ public class placeOrderController implements Initializable {
 
     public void cancelAction(ActionEvent actionEvent) {
         int custId = Integer.parseInt(customerID.getText());
-        try{
+        try {
             ResultSet resultSet = centerController.getInstance().getCustomerDetails(custId);
-            if(resultSet.next()){
-                System.out.println("name : "+resultSet.getString("name"));
+            if (resultSet.next()) {
+                System.out.println("name : " + resultSet.getString("name"));
                 System.out.println("no error");
-            } else{
+            } else {
                 System.out.println("else error");
             }
 
@@ -96,7 +107,7 @@ public class placeOrderController implements Initializable {
 
         if (length == 10) {
             customerID.setEditable(false);
-            try{
+            try {
                 int custId = Integer.parseInt(value);
                 ResultSet resultSet = centerController.getInstance().getCustomerDetails(custId);
                 resultSet.next();
@@ -147,12 +158,12 @@ public class placeOrderController implements Initializable {
         try {
             ResultSet resultSet = centerController.getInstance().getCustomerDetails(orderOb.getCustomerID());
 
-            if(resultSet.next()){
+            if (resultSet.next()) {
                 int res = addOrder(orderOb.getOrderID(), orderOb.getCustomerID());
                 if (res > 0) {
                     int resOD = addOrderDetails(orderOb.getOrderID(), orderOb.getQty(), orderOb.getStatus());
                 }
-            } else{
+            } else {
                 addCustomer(orderOb.getCustomerID(), orderOb.getName());
                 int res = addOrder(orderOb.getOrderID(), orderOb.getCustomerID());
                 if (res > 0) {
@@ -179,7 +190,7 @@ public class placeOrderController implements Initializable {
 
                     String lastId = resultSet.getString("id");
 
-                    String[] part = lastId.split("[B]]");
+                    String[] part = lastId.split("[B]");
                     int num = Integer.parseInt(part[1]);
                     num++;
 
@@ -189,7 +200,7 @@ public class placeOrderController implements Initializable {
 
                 }
             } else {
-                return "B001";
+                return "B000";
             }
         } catch (SQLException e) {
 
@@ -222,6 +233,54 @@ public class placeOrderController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //orderID.setText(generateId());
+        orderID.setText(generateId());
     }
+
+    public void nameKeyPressed(KeyEvent keyEvent) {
+        int length = customerName.getText().length();
+        int keyCode = keyEvent.getCode().getCode();
+
+        if (length < 16 || keyCode == 8) {
+            customerNameError.setText("");
+            customerName.setEditable(true);
+        } else {
+            customerNameError.setText("* input 16 character");
+            customerName.setEditable(false);
+        }
+    }
+
+    public void qtyKeyPressed(KeyEvent keyEvent) {
+        String value = qty.getText();
+        int length = value.length();
+        int chInt = keyEvent.getCode().getCode();
+
+        boolean condition = true;
+        int count = 0;
+        if(length>0){
+            count++;
+        } else {
+            count = 0;
+        }
+
+        if (count == 0 & chInt == 48) {
+            condition = false;
+        }
+
+        if (length < 2 & condition & (chInt >= 48 && chInt <= 57) || chInt == 8) {
+            qty.setEditable(true);
+            qtyError.setText("");
+        } else {
+            qty.setEditable(false);
+
+            if (!condition) {
+                qtyError.setText("  * Not a Q==0");
+            } else if (length == 2) {
+                qtyError.setText("  * only 2 digits");
+            } else {
+                qtyError.setText("  * only digits(0-9)");
+            }
+        }
+    }
+
+
 }

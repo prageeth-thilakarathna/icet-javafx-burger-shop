@@ -1,0 +1,61 @@
+
+X
+java:S1141»"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8ø‰Ÿ¶í1
+y
+java:S1488ƒ"[Immediately return this expression instead of assigning it to the temporary variable "res".(ÔÕüº8ø‰Ÿ¶í1
+y
+java:S1488"[Immediately return this expression instead of assigning it to the temporary variable "res".(ÔÕüº8ø‰Ÿ¶í1
+y
+java:S1488™"[Immediately return this expression instead of assigning it to the temporary variable "res".(ÔÕüº8ø‰Ÿ¶í1
+„
+java:S1488Û"aImmediately return this expression instead of assigning it to the temporary variable "resultSet".(××Ñ´ûÿÿÿÿ8ø‰Ÿ¶í1
+„
+java:S1488æ"aImmediately return this expression instead of assigning it to the temporary variable "resultSet".(××Ñ´ûÿÿÿÿ8ø‰Ÿ¶í1
+e
+java:S2095"GUse try-with-resources or close this "Statement" in a "finally" clause.(†—İ8ÆŠŸ¶í1
+e
+java:S2095Ù"GUse try-with-resources or close this "Statement" in a "finally" clause.(†—İ8ÆŠŸ¶í1
+e
+java:S2095ä"GUse try-with-resources or close this "Statement" in a "finally" clause.(†—İ8ÆŠŸ¶í1
+e
+java:S2095—"GUse try-with-resources or close this "Statement" in a "finally" clause.(†—İ8ÆŠŸ¶í1
+e
+java:S2095Œ"GUse try-with-resources or close this "Statement" in a "finally" clause.(†—İ8ÆŠŸ¶í1
+O
+java:S1172("2Remove this unused method parameter "actionEvent".(¨ĞÍô8ÆŠŸ¶í1
+T
+java:S1172/"2Remove this unused method parameter "actionEvent".(ÏÚ¿–ûÿÿÿÿ8ÆŠŸ¶í1
+G	java:S1064"+Replace this use of System.out by a logger.(È¹Åˆ8ÆŠŸ¶í1
+L	java:S1065"+Replace this use of System.out by a logger.(‰æ²şûÿÿÿÿ8ÆŠŸ¶í1
+L	java:S1067"+Replace this use of System.out by a logger.(ÓÖÑ©ÿÿÿÿÿ8ÆŠŸ¶í1
+L	java:S106;"+Replace this use of System.out by a logger.(ò¦®®ÿÿÿÿÿ8ÆŠŸ¶í1
+t
+java:S3776?"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(™Äæ–ùÿÿÿÿ8ÖŠŸ¶í1
+;
+java:S2178Y"Correct this "&" to "&&".(‰¤ç’ıÿÿÿÿ8ÖŠŸ¶í1
+;
+java:S2178Y"Correct this "&" to "&&".(‰¤ç’ıÿÿÿÿ8ÖŠŸ¶í1
+D
+java:S1125`"'Remove the unnecessary boolean literal.(³®ˆ˜8ÖŠŸ¶í1
+L
+java:S1172h"/Remove this unused method parameter "keyEvent".(Ê…¯¼8ÖŠŸ¶í1
+E	java:S108v")Either remove or fill this block of code.(É®£8ÖŠŸ¶í1
+W
+java:S1854¤"9Remove this useless assignment to local variable "resOD".(´àÙÃ8ÖŠŸ¶í1
+W
+java:S1854ª"9Remove this useless assignment to local variable "resOD".(´àÙÃ8ÖŠŸ¶í1
+H
+java:S1481¤"*Remove this unused "resOD" local variable.(´àÙÃ8ÖŠŸ¶í1
+H
+java:S1481ª"*Remove this unused "resOD" local variable.(´àÙÃ8ÖŠŸ¶í1
+F	java:S108­")Either remove or fill this block of code.(É®£8ÖŠŸ¶í1
+S
+java:S6397Á"5Replace this character class by the character itself.(¾Ø¯8ÖŠŸ¶í1
+F	java:S108Ç")Either remove or fill this block of code.(É®£8ÖŠŸ¶í1
+F	java:S108Í")Either remove or fill this block of code.(É®£8ÖŠŸ¶í1
+<
+java:S2178‰"Correct this "&" to "&&".(¾ÊÙÓùÿÿÿÿ8åŠŸ¶í1
+<
+java:S2178"Correct this "&" to "&&".(¼¯»Ûşÿÿÿÿ8åŠŸ¶í1
+<
+java:S2178"Correct this "&" to "&&".(¼¯»Ûşÿÿÿÿ8åŠŸ¶í1
