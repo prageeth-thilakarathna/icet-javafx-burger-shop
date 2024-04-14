@@ -2,14 +2,18 @@ package edu.icet.demo.controller;
 
 import edu.icet.demo.database.LoadDriver;
 import edu.icet.demo.model.orderDetails;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -18,6 +22,12 @@ import java.sql.Statement;
 import java.util.ResourceBundle;
 
 public class PlaceOrderController implements Initializable {
+    @FXML
+    private Button btnPlaceOrder;
+    @FXML
+    private Label totalQty;
+    @FXML
+    private AnchorPane anchorPane;
     @FXML
     private Label customerNameError;
     @FXML
@@ -32,32 +42,20 @@ public class PlaceOrderController implements Initializable {
     private Label customerIdError;
     @FXML
     private Label qtyError;
-    @FXML
-    private Button btnPlaceOrder;
-    @FXML
-    private Button btnCancel;
 
-    public void placeOrderAction(ActionEvent actionEvent) {
+    Alert alert = new Alert(Alert.AlertType.NONE);
+
+    public void placeOrderAction() {
         int custId = Integer.parseInt(customerID.getText());
         int quantity = Integer.parseInt(qty.getText());
         orderDetails newOrder = new orderDetails(orderID.getText(), custId, customerName.getText(), quantity, 0);
         placeOrder(newOrder);
     }
 
-    public void cancelAction(ActionEvent actionEvent) {
-        int custId = Integer.parseInt(customerID.getText());
-        try {
-            ResultSet resultSet = centerController.getInstance().getCustomerDetails(custId);
-            if (resultSet.next()) {
-                System.out.println("name : " + resultSet.getString("name"));
-                System.out.println("no error");
-            } else {
-                System.out.println("else error");
-            }
-
-        } catch (SQLException e) {
-            System.out.println("have error");
-        }
+    public void cancelAction() throws IOException {
+        Parent load = new FXMLLoader(getClass().getResource("/view/homePage.fxml")).load();
+        anchorPane.getChildren().clear();
+        anchorPane.getChildren().add(load);
     }
 
     public void customerIdKeyPressed(KeyEvent keyEvent) {
@@ -68,12 +66,8 @@ public class PlaceOrderController implements Initializable {
         boolean conditionFirstEquals0 = true;
         boolean conditionChar = false;
 
-        if (length == 0) {
-            if (ch.equals("0")) {
-                conditionFirstEquals0 = true;
-            } else {
-                conditionFirstEquals0 = false;
-            }
+        if (length == 0 && !ch.equals("0")) {
+            conditionFirstEquals0 = false;
         }
 
         for (int i = 0; i < count; i++) {
@@ -86,14 +80,14 @@ public class PlaceOrderController implements Initializable {
             }
         }
 
-        if ((length >= 0 && length < 10) & conditionChar & conditionFirstEquals0 || keyEvent.getCode().getCode() == 8) {
+        if (length < 10 && conditionChar && conditionFirstEquals0 || keyEvent.getCode().getCode() == 8) {
             customerID.setEditable(true);
             customerIdError.setText("");
         } else {
             customerID.setEditable(false);
             if (length == 10) {
                 customerIdError.setText("* input 10 digits");
-            } else if (conditionFirstEquals0 == false) {
+            } else if (!conditionFirstEquals0) {
                 customerIdError.setText("* Not a first digit==0");
             } else {
                 customerIdError.setText("* only digits(0-9)");
@@ -101,77 +95,97 @@ public class PlaceOrderController implements Initializable {
         }
     }
 
-    public void customerIdKeyTyped(KeyEvent keyEvent) {
+    public void customerIdKeyTyped() {
         String value = customerID.getText();
         int length = value.length();
 
         if (length == 10) {
             customerID.setEditable(false);
+            customerName.setDisable(false);
+            qty.setDisable(false);
+
             try {
                 int custId = Integer.parseInt(value);
-                ResultSet resultSet = centerController.getInstance().getCustomerDetails(custId);
-                resultSet.next();
-
-                customerName.setText(resultSet.getString("name"));
-                customerName.setEditable(false);
-
+                ResultSet resultSet = CenterController.getInstance().getCustomerDetails(custId);
+                if (resultSet.next()){
+                    customerName.setText(resultSet.getString("name"));
+                    customerName.setDisable(true);
+                }
             } catch (SQLException e) {
-
+                alert.setAlertType(Alert.AlertType.ERROR);
+                alert.setContentText(e.getMessage());
+                alert.show();
             }
         }
     }
 
-    public int addCustomer(int customerId, String name) throws SQLException {
+    public void addCustomer(int customerId, String name) throws SQLException {
         String sql = "INSERT INTO customer VALUES(" + customerId + ", '" + name + "')";
-
         LoadDriver instance = LoadDriver.getInstance();
         Connection connection = instance.getConnection();
         Statement stm = connection.createStatement();
-
-        int res = stm.executeUpdate(sql);
-        return res;
+        stm.executeUpdate(sql);
     }
 
-    public int addOrder(String orderId, int customerId) throws SQLException {
+    public void addOrder(String orderId, int customerId) throws SQLException {
         String sql = "INSERT INTO orders VALUES('" + orderId + "', " + customerId + ")";
-
         LoadDriver instance = LoadDriver.getInstance();
         Connection connection = instance.getConnection();
         Statement stm = connection.createStatement();
-
-        int res = stm.executeUpdate(sql);
-        return res;
+        stm.executeUpdate(sql);
     }
 
-    public int addOrderDetails(String orderId, int quantity, int status) throws SQLException {
+    public void addOrderDetails(String orderId, int quantity, int status) throws SQLException {
         String sql = "INSERT INTO order_details VALUES('" + orderId + "', " + quantity + ", " + status + ")";
-
         LoadDriver instance = LoadDriver.getInstance();
         Connection connection = instance.getConnection();
         Statement stm = connection.createStatement();
-
-        int res = stm.executeUpdate(sql);
-        return res;
+        stm.executeUpdate(sql);
     }
 
-    void placeOrder(orderDetails orderOb) {
+    public void placeOrder(orderDetails orderOb) {
         try {
-            ResultSet resultSet = centerController.getInstance().getCustomerDetails(orderOb.getCustomerID());
+            ResultSet resultSet = CenterController.getInstance().getCustomerDetails(orderOb.getCustomerID());
 
             if (resultSet.next()) {
-                int res = addOrder(orderOb.getOrderID(), orderOb.getCustomerID());
-                if (res > 0) {
-                    int resOD = addOrderDetails(orderOb.getOrderID(), orderOb.getQty(), orderOb.getStatus());
-                }
+                addOrder(orderOb.getOrderID(), orderOb.getCustomerID());
+                addOrderDetails(orderOb.getOrderID(), orderOb.getQty(), orderOb.getStatus());
+
+                customerID.setText("");
+                customerName.setText("");
+                qty.setText("");
+                totalQty.setText("0.00");
+                btnPlaceOrder.setDisable(true);
+                customerName.setDisable(true);
+                qty.setDisable(true);
+                orderID.setText(generateId());
+
+                alert.setAlertType(Alert.AlertType.CONFIRMATION);
+                alert.setContentText("Your " + orderID.getText() + " order is enter to the system successfully...");
+                alert.show();
+
             } else {
                 addCustomer(orderOb.getCustomerID(), orderOb.getName());
-                int res = addOrder(orderOb.getOrderID(), orderOb.getCustomerID());
-                if (res > 0) {
-                    int resOD = addOrderDetails(orderOb.getOrderID(), orderOb.getQty(), orderOb.getStatus());
-                }
+                addOrder(orderOb.getOrderID(), orderOb.getCustomerID());
+                addOrderDetails(orderOb.getOrderID(), orderOb.getQty(), orderOb.getStatus());
+
+                customerID.setText("");
+                customerName.setText("");
+                qty.setText("");
+                totalQty.setText("0.00");
+                btnPlaceOrder.setDisable(true);
+                customerName.setDisable(true);
+                qty.setDisable(true);
+                orderID.setText(generateId());
+
+                alert.setAlertType(Alert.AlertType.CONFIRMATION);
+                alert.setContentText("Your " + orderID.getText() + " order is enter to the system successfully...");
+                alert.show();
             }
         } catch (SQLException e) {
-
+            alert.setAlertType(Alert.AlertType.ERROR);
+            alert.setContentText(e.getMessage());
+            alert.show();
         }
     }
 
@@ -184,56 +198,41 @@ public class PlaceOrderController implements Initializable {
             int size = resultOrderRowCount.getInt("row_count");
 
             if (size > 0) {
-                try {
-                    ResultSet resultSet = getLastOrderId();
-                    resultSet.next();
+                ResultSet resultSet = getLastOrderId();
+                resultSet.next();
 
-                    String lastId = resultSet.getString("id");
+                String lastId = resultSet.getString("id");
 
-                    String[] part = lastId.split("[B]");
-                    int num = Integer.parseInt(part[1]);
-                    num++;
+                String[] part = lastId.split("B");
+                int num = Integer.parseInt(part[1]);
+                num++;
 
-                    return String.format("B%03d", num);
-
-                } catch (SQLException e) {
-
-                }
+                return String.format("B%03d", num);
             } else {
-                return "B000";
+                return "B001";
             }
         } catch (SQLException e) {
-
+            alert.setAlertType(Alert.AlertType.ERROR);
+            alert.setContentText(e.getMessage());
+            alert.show();
         }
-
         return null;
     }
 
     public ResultSet getLastOrderId() throws SQLException {
         String sql = "SELECT * FROM orders ORDER BY id DESC LIMIT 1";
-
         LoadDriver instance = LoadDriver.getInstance();
         Connection connection = instance.getConnection();
         Statement stm = connection.createStatement();
-
-        ResultSet resultSet = stm.executeQuery(sql);
-        return resultSet;
+        return stm.executeQuery(sql);
     }
 
     public ResultSet getOrdersSize() throws SQLException {
         String sql = "SELECT COUNT(*) AS row_count FROM orders";
-
         LoadDriver instance = LoadDriver.getInstance();
         Connection connection = instance.getConnection();
         Statement stm = connection.createStatement();
-
-        ResultSet resultSet = stm.executeQuery(sql);
-        return resultSet;
-    }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        orderID.setText(generateId());
+        return stm.executeQuery(sql);
     }
 
     public void nameKeyPressed(KeyEvent keyEvent) {
@@ -249,6 +248,18 @@ public class PlaceOrderController implements Initializable {
         }
     }
 
+    public void nameKeyTyped() {
+        int id = customerID.getText().length();
+        int name = customerName.getText().length();
+        int qtyLength = qty.getText().length();
+
+        if (id == 10 && name > 0 && qtyLength > 0) {
+            btnPlaceOrder.setDisable(false);
+        } else {
+            btnPlaceOrder.setDisable(true);
+        }
+    }
+
     public void qtyKeyPressed(KeyEvent keyEvent) {
         String value = qty.getText();
         int length = value.length();
@@ -256,17 +267,15 @@ public class PlaceOrderController implements Initializable {
 
         boolean condition = true;
         int count = 0;
-        if(length>0){
+        if (length > 0) {
             count++;
-        } else {
-            count = 0;
         }
 
-        if (count == 0 & chInt == 48) {
+        if (count == 0 && chInt == 48) {
             condition = false;
         }
 
-        if (length < 2 & condition & (chInt >= 48 && chInt <= 57) || chInt == 8) {
+        if (length < 2 && condition && (chInt >= 48 && chInt <= 57) || chInt == 8) {
             qty.setEditable(true);
             qtyError.setText("");
         } else {
@@ -282,5 +291,38 @@ public class PlaceOrderController implements Initializable {
         }
     }
 
+    public void qtyKeyTyped() {
+        String value = qty.getText();
+        int length = value.length();
+        double total;
+        String totalValue = "";
 
+        int id = customerID.getText().length();
+        int name = customerName.getText().length();
+
+        if (id == 10 && name > 0 && length > 0) {
+            btnPlaceOrder.setDisable(false);
+        } else {
+            btnPlaceOrder.setDisable(true);
+        }
+
+        if (length > 0) {
+            int qtyInt = Integer.parseInt(value);
+            total = qtyInt * CenterController.BURGERPRICE;
+            totalValue = String.valueOf(CenterController.decimalFormat.format(total));
+            totalQty.setText(totalValue);
+        } else {
+            total = 0 * CenterController.BURGERPRICE;
+            totalValue = String.valueOf(CenterController.decimalFormat.format(total));
+            totalQty.setText(totalValue);
+        }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        orderID.setText(generateId());
+        btnPlaceOrder.setDisable(true);
+        customerName.setDisable(true);
+        qty.setDisable(true);
+    }
 }

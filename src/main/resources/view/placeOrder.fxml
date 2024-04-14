@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="512.0" prefWidth="768.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.demo.controller.PlaceOrderController">
+<AnchorPane fx:id="anchorPane" prefHeight="512.0" prefWidth="768.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.demo.controller.PlaceOrderController">
    <children>
       <BorderPane prefHeight="512.0" prefWidth="768.0">
          <top>
@@ -87,7 +87,7 @@
                         <Insets bottom="10.0" top="10.0" />
                      </VBox.margin>
                   </TextField>
-                  <TextField fx:id="customerName" layoutX="10.0" layoutY="10.0" onKeyPressed="#nameKeyPressed">
+                  <TextField fx:id="customerName" layoutX="10.0" layoutY="10.0" onKeyPressed="#nameKeyPressed" onKeyTyped="#nameKeyTyped">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -95,7 +95,7 @@
                         <Insets bottom="10.0" top="10.0" />
                      </VBox.margin>
                   </TextField>
-                  <TextField fx:id="qty" layoutX="10.0" layoutY="10.0" onKeyPressed="#qtyKeyPressed">
+                  <TextField fx:id="qty" layoutX="10.0" layoutY="10.0" onKeyPressed="#qtyKeyPressed" onKeyTyped="#qtyKeyTyped">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -155,7 +155,7 @@
                               </Label>
                            </left>
                            <center>
-                              <Label prefHeight="27.0" prefWidth="172.0" text="0.00" textFill="RED" BorderPane.alignment="CENTER">
+                              <Label fx:id="totalQty" prefHeight="27.0" prefWidth="172.0" text="0.00" textFill="RED" BorderPane.alignment="CENTER">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
@@ -187,7 +187,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="btnCancel" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#cancelAction" style="-fx-background-color: #BB2525;" text="Cancel" textFill="WHITE">
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#cancelAction" style="-fx-background-color: #BB2525;" text="Cancel" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>

@@ -7,17 +7,20 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.DecimalFormat;
 
-public class centerController {
+public class CenterController {
     @Getter
-    private static final centerController instance = new centerController();
+    private static final CenterController instance = new CenterController();
 
     public static final double BURGERPRICE = 500.00;
     public static final int PREPARING = 0;
     public static final int DELIVERED = 1;
     public static final int CANCEL = 2;
 
-    private centerController(){}
+    public static final DecimalFormat decimalFormat = new DecimalFormat("0.00");
+
+    private CenterController(){}
 
     public ResultSet getCustomerDetails(int customerId) throws SQLException {
         String sql = "SELECT * FROM customer WHERE id="+customerId;
