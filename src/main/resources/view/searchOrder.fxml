@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="anchorPane" prefHeight="512.0" prefWidth="768.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.demo.controller.SearchOrderController">
+   <children>
+      <BorderPane prefHeight="512.0" prefWidth="768.0">
+         <top>
+            <Label alignment="CENTER" prefHeight="65.0" prefWidth="768.0" style="-fx-background-color: #BB2525;" text="Search Order" textFill="WHITE" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </top>
+         <bottom>
+            <HBox alignment="TOP_RIGHT" prefHeight="56.0" prefWidth="768.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="btnSearchAnotherOrder" mnemonicParsing="false" onAction="#searchAnotherOrderAction" style="-fx-background-color: #BB2525;" text="Search Another Order" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnCancel" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#cancelAction" style="-fx-background-color: #BB2525;" text="Cancel" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="30.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </HBox>
+         </bottom>
+         <center>
+            <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TextField fx:id="inputOrderId" onKeyTyped="#orderIdKeyTyped" prefHeight="39.0" prefWidth="454.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="30.0" right="300.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label fx:id="customerIdDisplay" textFill="#211911">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="nameDisplay" layoutX="10.0" layoutY="35.0" textFill="#211911">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="8.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="qtyDisplay" layoutX="10.0" layoutY="35.0" textFill="#211911">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="8.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="totalDisplay" layoutX="10.0" layoutY="52.0" textFill="#211911">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="8.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="statusDisplay" layoutX="10.0" layoutY="52.0" textFill="#211911">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="18.0" top="8.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+         </center>
+         <left>
+            <VBox alignment="CENTER_LEFT" prefHeight="391.0" prefWidth="259.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Enter Order ID" textFill="#211911">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="30.0" left="100.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="10.0" text="Customer ID" textFill="#211911">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="12.0" left="100.0" top="12.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="10.0" text="Customer Name" textFill="#211911">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="12.0" left="100.0" top="12.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="27.0" text="Burger Quantity" textFill="#211911">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="12.0" left="100.0" top="12.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="44.0" text="Total Value" textFill="#211911">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="12.0" left="100.0" top="12.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="61.0" text="Order Status" textFill="#211911">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="12.0" left="100.0" top="12.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+         </left>
+      </BorderPane>
+   </children>
+</AnchorPane>

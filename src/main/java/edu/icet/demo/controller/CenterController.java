@@ -1,6 +1,7 @@
 package edu.icet.demo.controller;
 
 import edu.icet.demo.database.LoadDriver;
+import javafx.scene.control.Alert;
 import lombok.Getter;
 
 import java.sql.Connection;
@@ -19,6 +20,7 @@ public class CenterController {
     public static final int CANCEL = 2;
 
     public static final DecimalFormat decimalFormat = new DecimalFormat("0.00");
+    public static final Alert alert = new Alert(Alert.AlertType.NONE);
 
     private CenterController() {
     }
@@ -45,7 +47,14 @@ public class CenterController {
     }
 
     public ResultSet getOrdersByCustomerId(String customerId) throws SQLException {
-        String sql = "SELECT * FROM orders WHERE customerId="+customerId;
+        String sql = "SELECT * FROM orders WHERE customerId=" + customerId;
+        Connection connection = LoadDriver.getInstance().getConnection();
+        Statement statement = connection.createStatement();
+        return statement.executeQuery(sql);
+    }
+
+    public ResultSet getOrder(String orderId) throws SQLException {
+        String sql = "SELECT * FROM orders WHERE id='" + orderId + "'";
         Connection connection = LoadDriver.getInstance().getConnection();
         Statement statement = connection.createStatement();
         return statement.executeQuery(sql);

@@ -43,8 +43,6 @@ public class PlaceOrderController implements Initializable {
     @FXML
     private Label qtyError;
 
-    Alert alert = new Alert(Alert.AlertType.NONE);
-
     public void placeOrderAction() {
         int custId = Integer.parseInt(customerID.getText());
         int quantity = Integer.parseInt(qty.getText());
@@ -112,9 +110,9 @@ public class PlaceOrderController implements Initializable {
                     customerName.setDisable(true);
                 }
             } catch (SQLException e) {
-                alert.setAlertType(Alert.AlertType.ERROR);
-                alert.setContentText(e.getMessage());
-                alert.show();
+                CenterController.alert.setAlertType(Alert.AlertType.ERROR);
+                CenterController.alert.setContentText(e.getMessage());
+                CenterController.alert.show();
             }
         }
     }
@@ -162,9 +160,9 @@ public class PlaceOrderController implements Initializable {
                 qty.setDisable(true);
                 orderID.setText(generateId());
 
-                alert.setAlertType(Alert.AlertType.CONFIRMATION);
-                alert.setContentText("Your " + tempOrderId + " order is enter to the system successfully...");
-                alert.show();
+                CenterController.alert.setAlertType(Alert.AlertType.CONFIRMATION);
+                CenterController.alert.setContentText("Your " + tempOrderId + " order is enter to the system successfully...");
+                CenterController.alert.show();
 
             } else {
                 addCustomer(orderOb.getCustomerID(), orderOb.getName());
@@ -182,14 +180,14 @@ public class PlaceOrderController implements Initializable {
                 qty.setDisable(true);
                 orderID.setText(generateId());
 
-                alert.setAlertType(Alert.AlertType.CONFIRMATION);
-                alert.setContentText("Your " + tempOrderId + " order is enter to the system successfully...");
-                alert.show();
+                CenterController.alert.setAlertType(Alert.AlertType.CONFIRMATION);
+                CenterController.alert.setContentText("Your " + tempOrderId + " order is enter to the system successfully...");
+                CenterController.alert.show();
             }
         } catch (SQLException e) {
-            alert.setAlertType(Alert.AlertType.ERROR);
-            alert.setContentText(e.getMessage());
-            alert.show();
+            CenterController.alert.setAlertType(Alert.AlertType.ERROR);
+            CenterController.alert.setContentText(e.getMessage());
+            CenterController.alert.show();
         }
     }
 
@@ -216,9 +214,9 @@ public class PlaceOrderController implements Initializable {
                 return "B001";
             }
         } catch (SQLException e) {
-            alert.setAlertType(Alert.AlertType.ERROR);
-            alert.setContentText(e.getMessage());
-            alert.show();
+            CenterController.alert.setAlertType(Alert.AlertType.ERROR);
+            CenterController.alert.setContentText(e.getMessage());
+            CenterController.alert.show();
         }
         return null;
     }
