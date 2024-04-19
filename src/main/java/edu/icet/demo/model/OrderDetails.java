@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class orderDetails {
+public class OrderDetails {
     private String orderID;
     private int customerID;
     private String name;

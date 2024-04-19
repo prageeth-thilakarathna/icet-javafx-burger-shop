@@ -1,7 +1,7 @@
 package edu.icet.demo.controller;
 
 import edu.icet.demo.database.LoadDriver;
-import edu.icet.demo.model.orderDetails;
+import edu.icet.demo.model.OrderDetails;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -48,7 +48,7 @@ public class PlaceOrderController implements Initializable {
     public void placeOrderAction() {
         int custId = Integer.parseInt(customerID.getText());
         int quantity = Integer.parseInt(qty.getText());
-        orderDetails newOrder = new orderDetails(orderID.getText(), custId, customerName.getText(), quantity, 0);
+        OrderDetails newOrder = new OrderDetails(orderID.getText(), custId, customerName.getText(), quantity, 0);
         placeOrder(newOrder);
     }
 
@@ -143,7 +143,7 @@ public class PlaceOrderController implements Initializable {
         stm.executeUpdate(sql);
     }
 
-    public void placeOrder(orderDetails orderOb) {
+    public void placeOrder(OrderDetails orderOb) {
         try {
             ResultSet resultSet = CenterController.getInstance().getCustomerDetails(orderOb.getCustomerID());
 
@@ -151,6 +151,8 @@ public class PlaceOrderController implements Initializable {
                 addOrder(orderOb.getOrderID(), orderOb.getCustomerID());
                 addOrderDetails(orderOb.getOrderID(), orderOb.getQty(), orderOb.getStatus());
 
+                String tempOrderId = orderID.getText();
+
                 customerID.setText("");
                 customerName.setText("");
                 qty.setText("");
@@ -161,7 +163,7 @@ public class PlaceOrderController implements Initializable {
                 orderID.setText(generateId());
 
                 alert.setAlertType(Alert.AlertType.CONFIRMATION);
-                alert.setContentText("Your " + orderID.getText() + " order is enter to the system successfully...");
+                alert.setContentText("Your " + tempOrderId + " order is enter to the system successfully...");
                 alert.show();
 
             } else {
@@ -169,6 +171,8 @@ public class PlaceOrderController implements Initializable {
                 addOrder(orderOb.getOrderID(), orderOb.getCustomerID());
                 addOrderDetails(orderOb.getOrderID(), orderOb.getQty(), orderOb.getStatus());
 
+                String tempOrderId = orderID.getText();
+
                 customerID.setText("");
                 customerName.setText("");
                 qty.setText("");
@@ -179,7 +183,7 @@ public class PlaceOrderController implements Initializable {
                 orderID.setText(generateId());
 
                 alert.setAlertType(Alert.AlertType.CONFIRMATION);
-                alert.setContentText("Your " + orderID.getText() + " order is enter to the system successfully...");
+                alert.setContentText("Your " + tempOrderId + " order is enter to the system successfully...");
                 alert.show();
             }
         } catch (SQLException e) {

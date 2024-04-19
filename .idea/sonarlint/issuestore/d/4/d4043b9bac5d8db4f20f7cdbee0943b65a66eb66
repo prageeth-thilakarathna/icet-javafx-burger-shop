@@ -1,9 +1,11 @@
 
-¢
-java:S1488"aImmediately return this expression instead of assigning it to the temporary variable "resultSet".(××Ñ´ûÿÿÿÿJ$a68951a6-6fc6-4d86-b56e-609c6eb037ea
-Š
-java:S2095"GUse try-with-resources or close this "Statement" in a "finally" clause.(†—İ8ë÷ëÀí1J$15f4d305-1edf-4672-9beb-6a5930ca9131
-Ú
-java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(³Ú¹şÿÿÿÿÿJ$61c25269-6eba-4819-9bf3-53dd347a2191
-w
-java:S1117"<Rename "instance" which hides the field declared at line 13.(ÍÁş{J$a192c9ce-4e4a-4861-8585-0151df91f053
+
+java:S20952"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ8äŸóşî1J$a8118bc2-eabf-49bb-8c72-38abca7c90c7
+
+java:S2095+"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ8Œå”ÿî1J$cfc97f63-8459-438d-a82e-4ca35396ae98
+
+java:S2095$"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ8„‡øşî1J$6639dbb5-8160-4564-aee9-a3293ab2bd54
+
+java:S2095"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ8äŸóşî1J$7675f407-3a2d-4636-b47b-d416ce491d2a
+á
+java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(³Ú¹şÿÿÿÿÿ8ôŸóşî1J$bb31475e-c416-4860-8cd9-1d25935cc11b

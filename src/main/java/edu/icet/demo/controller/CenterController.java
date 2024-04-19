@@ -20,21 +20,36 @@ public class CenterController {
 
     public static final DecimalFormat decimalFormat = new DecimalFormat("0.00");
 
-    private CenterController(){}
-
-    public ResultSet getCustomerDetails(int customerId) throws SQLException {
-        String sql = "SELECT * FROM customer WHERE id="+customerId;
-
-        LoadDriver instance = LoadDriver.getInstance();
-        Connection connection = instance.getConnection();
-        Statement stm = connection.createStatement();
-        ResultSet resultSet = stm.executeQuery(sql);
-        return resultSet;
+    private CenterController() {
     }
 
+    public ResultSet getCustomerDetails(int customerId) throws SQLException {
+        String sql = "SELECT * FROM customer WHERE id=" + customerId;
+        Connection connection = LoadDriver.getInstance().getConnection();
+        Statement statement = connection.createStatement();
+        return statement.executeQuery(sql);
+    }
 
+    public ResultSet getOrderDetails(String orderId) throws SQLException {
+        String sql = "SELECT * FROM order_details WHERE orderId='" + orderId + "'";
+        Connection connection = LoadDriver.getInstance().getConnection();
+        Statement statement = connection.createStatement();
+        return statement.executeQuery(sql);
+    }
 
+    public ResultSet getCustomers() throws SQLException {
+        String sql = "SELECT * FROM customer";
+        Connection connection = LoadDriver.getInstance().getConnection();
+        Statement statement = connection.createStatement();
+        return statement.executeQuery(sql);
+    }
 
+    public ResultSet getOrdersByCustomerId(String customerId) throws SQLException {
+        String sql = "SELECT * FROM orders WHERE customerId="+customerId;
+        Connection connection = LoadDriver.getInstance().getConnection();
+        Statement statement = connection.createStatement();
+        return statement.executeQuery(sql);
+    }
 
 
 }

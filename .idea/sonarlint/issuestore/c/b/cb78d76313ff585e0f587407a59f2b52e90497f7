@@ -1,13 +1,7 @@
 
-v
-java:S1104"YMake btnPlaceOrder a static final constant or non-public and provide accessors if needed.(¢žü¿8¼ÝíÀí1
-|
-java:S1104"ZMake btnSearchOrder a static final constant or non-public and provide accessors if needed.(çõîÈùÿÿÿÿ8¼ÝíÀí1
-u
-java:S1104"SMake btnExit a static final constant or non-public and provide accessors if needed.(ñÿ¯©øÿÿÿÿ8¼ÝíÀí1
-r
-java:S1104"VMake anchorPane a static final constant or non-public and provide accessors if needed.(Û§™8¼ÝíÀí1
 Â
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(º†¦¿øÿÿÿÿJ$6132a14d-5645-453b-8959-177c7817381c
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(º†¦¿øÿÿÿÿJ$d32b8f16-c113-4796-bf47-ba46f04925a1
 Â
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‰«ÙŠùÿÿÿÿJ$ab2cf3c1-6221-4cc1-b104-e43ab696a3cd
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‰«ÙŠùÿÿÿÿJ$40e766c6-286c-40af-88ae-650665f20164
+€
+java:S1128"8Remove this unused import 'javafx.scene.control.Button'.(Ë Í‹øÿÿÿÿ8þ‡Ìÿî1J$c306b82b-eeb4-4c65-98fa-8051742cb127

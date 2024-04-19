@@ -30,7 +30,7 @@
                <center>
                   <VBox alignment="CENTER" prefHeight="448.0" prefWidth="384.0" BorderPane.alignment="CENTER">
                      <children>
-                        <Button fx:id="btnPlaceOrder" mnemonicParsing="false" onAction="#placeOrderAction" prefWidth="250.0" style="-fx-background-color: #BB2525;" text="Place Order" textFill="WHITE">
+                        <Button mnemonicParsing="false" onAction="#placeOrderAction" prefWidth="250.0" style="-fx-background-color: #BB2525;" text="Place Order" textFill="WHITE">
                            <VBox.margin>
                               <Insets bottom="10.0" top="10.0" />
                            </VBox.margin>
@@ -41,7 +41,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefWidth="250.0" style="-fx-background-color: #BB2525;" text="Search Best Customer" textFill="WHITE">
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#searchBestCustomerAction" prefWidth="250.0" style="-fx-background-color: #BB2525;" text="Search Best Customer" textFill="WHITE">
                            <VBox.margin>
                               <Insets bottom="10.0" top="10.0" />
                            </VBox.margin>
@@ -52,7 +52,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Button fx:id="btnSearchOrder" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#searchOrderAction" prefWidth="250.0" style="-fx-background-color: #BB2525;" text="Search Order" textFill="WHITE">
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#searchOrderAction" prefWidth="250.0" style="-fx-background-color: #BB2525;" text="Search Order" textFill="WHITE">
                            <VBox.margin>
                               <Insets bottom="10.0" top="10.0" />
                            </VBox.margin>
@@ -102,7 +102,7 @@
                <bottom>
                   <HBox alignment="TOP_RIGHT" prefHeight="57.0" prefWidth="384.0" BorderPane.alignment="CENTER">
                      <children>
-                        <Button fx:id="btnExit" alignment="CENTER" mnemonicParsing="false" onAction="#exitAction" prefWidth="80.0" style="-fx-background-color: #BB2525;" text="Exit" textFill="WHITE">
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#exitAction" prefWidth="80.0" style="-fx-background-color: #BB2525;" text="Exit" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
