@@ -1,14 +1,16 @@
 
-Š
-java:S2095|"GUse try-with-resources or close this "Statement" in a "finally" clause.(†—İ8ùâ·şî1J$cd28e84a-5cc3-4442-aed6-a894fde5f17c
-‹
-java:S2095„"GUse try-with-resources or close this "Statement" in a "finally" clause.(†—İ8ùâ·şî1J$69e2d7e6-c77e-4229-8c55-bc3225ecb74a
-‹
-java:S2095Œ"GUse try-with-resources or close this "Statement" in a "finally" clause.(†—İ8ùâ·şî1J$99d51d9d-aa50-47db-ae91-556fcb402bec
 ‹
 java:S2095ä"GUse try-with-resources or close this "Statement" in a "finally" clause.(†—İ8ùâ·şî1J$f9f10cb3-53c2-4db9-acaa-7e42933c8634
 ‹
 java:S2095ì"GUse try-with-resources or close this "Statement" in a "finally" clause.(†—İ8ùâ·şî1J$7f68493a-b844-4f31-93cf-86791da36879
+Š
+java:S2095|"GUse try-with-resources or close this "Statement" in a "finally" clause.(†—İ8ùâ·şî1J$cd28e84a-5cc3-4442-aed6-a894fde5f17c
+‹
+java:S2095Œ"GUse try-with-resources or close this "Statement" in a "finally" clause.(†—İ8ùâ·şî1J$99d51d9d-aa50-47db-ae91-556fcb402bec
+‹
+java:S2095„"GUse try-with-resources or close this "Statement" in a "finally" clause.(†—İ8ùâ·şî1J$69e2d7e6-c77e-4229-8c55-bc3225ecb74a
+B
+java:S6905á"Don't use the query "SELECT *".(£€—øÿÿÿÿ8Ö¾¥Íñ1
 †
 java:S1126‚"BReplace this if-then-else statement by a single method invocation.(á”Ê8·ã·şî1J$83cd74f3-15b8-4ca9-87f7-23d2a782febf
 …
