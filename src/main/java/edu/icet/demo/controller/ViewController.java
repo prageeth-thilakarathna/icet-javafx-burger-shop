@@ -1,6 +1,5 @@
 package edu.icet.demo.controller;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -34,6 +33,9 @@ public class ViewController {
     }
 
     @FXML
-    private void cancelOrdersAction(ActionEvent actionEvent) {
+    private void cancelOrdersAction() throws IOException {
+        Parent load = new FXMLLoader(getClass().getResource("/view/viewCancel.fxml")).load();
+        anchorPane.getChildren().clear();
+        anchorPane.getChildren().add(load);
     }
 }

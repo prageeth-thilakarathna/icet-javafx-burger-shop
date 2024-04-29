@@ -3,7 +3,6 @@ package edu.icet.demo.controller;
 import edu.icet.demo.model.ViewOrders;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -20,7 +19,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class ViewPreparingController implements Initializable {
+public class ViewCancelController implements Initializable {
     @FXML
     private AnchorPane anchorPane;
     @FXML
@@ -50,7 +49,7 @@ public class ViewPreparingController implements Initializable {
         anchorPane.getChildren().add(load);
     }
 
-    private ObservableList<ViewOrders> getPreparingOrders() {
+    private ObservableList<ViewOrders> getCancelOrders() {
         ObservableList<ViewOrders> preparingOrders = FXCollections.observableArrayList();
 
         try {
@@ -60,7 +59,7 @@ public class ViewPreparingController implements Initializable {
                 ResultSet resultSetOrderDetails = CenterController.getInstance().getOrderDetails(resultSetAllOrders.getString("id"));
                 resultSetOrderDetails.next();
 
-                if (resultSetOrderDetails.getInt("status") == 0) {
+                if (resultSetOrderDetails.getInt("status") == 2) {
                     ResultSet resultSetCustomer = CenterController.getInstance().getCustomerDetails(resultSetAllOrders.getInt("customerId"));
                     resultSetCustomer.next();
 
@@ -87,6 +86,6 @@ public class ViewPreparingController implements Initializable {
         colQuantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         colOrderValue.setCellValueFactory(new PropertyValueFactory<>("orderValue"));
 
-        tableView.setItems(getPreparingOrders());
+        tableView.setItems(getCancelOrders());
     }
 }

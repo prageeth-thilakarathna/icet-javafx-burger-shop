@@ -36,14 +36,14 @@ public class ViewDeliveredController implements Initializable {
     private TableColumn<ViewOrders, String> colOrderValue;
 
     @FXML
-    private void btnBackHome() throws IOException {
+    private void backHomeAction() throws IOException {
         Parent load = new FXMLLoader(getClass().getResource("/view/homePage.fxml")).load();
         anchorPane.getChildren().clear();
         anchorPane.getChildren().add(load);
     }
 
     @FXML
-    private void btnCancel() throws IOException {
+    private void cancelAction() throws IOException {
         Parent load = new FXMLLoader(getClass().getResource("/view/view.fxml")).load();
         anchorPane.getChildren().clear();
         anchorPane.getChildren().add(load);

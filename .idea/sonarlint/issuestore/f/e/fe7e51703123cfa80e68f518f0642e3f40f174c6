@@ -1,5 +1,7 @@
 
 ‘
-java:S1192B"IDefine a constant instead of duplicating this literal "quantity" 3 times.(¥Ø„£şÿÿÿÿ8‰¼»Öò1J$832fc11d-e42f-4aa4-810c-dcfc6a674177
+java:S1192C"IDefine a constant instead of duplicating this literal "quantity" 3 times.(¥Ø„£şÿÿÿÿ8‰¼»Öò1J$1a725d78-fb96-4249-99eb-eb24f5a974c2
 “
-java:S1192?"KDefine a constant instead of duplicating this literal "customerId" 3 times.(¾Ëå¸ùÿÿÿÿ8‰¼»Öò1J$d99d096a-bddf-4ea2-8197-77baf52ab0c5
+java:S1192@"KDefine a constant instead of duplicating this literal "customerId" 3 times.(¾Ëå¸ùÿÿÿÿ8‰¼»Öò1J$8991a86e-e5da-49f4-9367-5dda9a09e89c
+}
+java:S1128"5Remove this unused import 'javafx.event.ActionEvent'.(î•¯¼ıÿÿÿÿ8¥ÛçØò1J$7793668f-a1ef-45f6-9d2b-03246bd9935c
