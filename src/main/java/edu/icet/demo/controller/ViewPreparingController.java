@@ -19,7 +19,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class ViewDeliveredController implements Initializable {
+public class ViewPreparingController implements Initializable {
     @FXML
     private AnchorPane anchorPane;
     @FXML
@@ -49,8 +49,8 @@ public class ViewDeliveredController implements Initializable {
         anchorPane.getChildren().add(load);
     }
 
-    private ObservableList<ViewOrders> getDeliveredOrders() {
-        ObservableList<ViewOrders> deliveredOrders = FXCollections.observableArrayList();
+    private ObservableList<ViewOrders> getPreparingOrders() {
+        ObservableList<ViewOrders> preparingOrders = FXCollections.observableArrayList();
 
         try {
             ResultSet resultSetAllOrders = CenterController.getInstance().getAllOrders();
@@ -59,14 +59,14 @@ public class ViewDeliveredController implements Initializable {
                 ResultSet resultSetOrderDetails = CenterController.getInstance().getOrderDetails(resultSetAllOrders.getString("id"));
                 resultSetOrderDetails.next();
 
-                if (resultSetOrderDetails.getInt("status") == 1) {
+                if (resultSetOrderDetails.getInt("status") == 0) {
                     ResultSet resultSetCustomer = CenterController.getInstance().getCustomerDetails(resultSetAllOrders.getInt("customerId"));
                     resultSetCustomer.next();
 
                     String total = CenterController.decimalFormat.format(resultSetOrderDetails.getInt("quantity") * CenterController.BURGERPRICE);
 
                     ViewOrders order = new ViewOrders(resultSetAllOrders.getString("id"), "0"+resultSetAllOrders.getString("customerId"), resultSetCustomer.getString("name"), resultSetOrderDetails.getString("quantity"), total);
-                    deliveredOrders.add(order);
+                    preparingOrders.add(order);
                 }
             }
         } catch (SQLException e) {
@@ -75,7 +75,7 @@ public class ViewDeliveredController implements Initializable {
             CenterController.alert.show();
         }
 
-        return deliveredOrders;
+        return preparingOrders;
     }
 
     @Override
@@ -86,6 +86,6 @@ public class ViewDeliveredController implements Initializable {
         colQuantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         colOrderValue.setCellValueFactory(new PropertyValueFactory<>("orderValue"));
 
-        tableView.setItems(getDeliveredOrders());
+        tableView.setItems(getPreparingOrders());
     }
 }

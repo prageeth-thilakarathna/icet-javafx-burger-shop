@@ -27,7 +27,10 @@ public class ViewController {
     }
 
     @FXML
-    private void preparingOrdersAction(ActionEvent actionEvent) {
+    private void preparingOrdersAction() throws IOException {
+        Parent load = new FXMLLoader(getClass().getResource("/view/viewPreparing.fxml")).load();
+        anchorPane.getChildren().clear();
+        anchorPane.getChildren().add(load);
     }
 
     @FXML
