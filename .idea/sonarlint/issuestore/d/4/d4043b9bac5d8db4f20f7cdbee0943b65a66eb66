@@ -1,15 +1,19 @@
 
-
-java:S2095&"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ8ì£”­ï1J$d1c6a6aa-e3c9-4c58-9e73-239b07119a92
-
-java:S2095-"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ8ì£”­ï1J$0e799b4f-ed38-4037-a844-b46e6304ff9c
-
-java:S2095;"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ8Éª˜­ï1J$562e8773-7278-4c34-9702-b2314225491e
-
-java:S20954"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ8ì£”­ï1J$0190bca5-e5d9-4d51-871d-d5c09eb4b3c1
-
-java:S2095"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ8ì£”­ï1J$a5bf2b9d-f355-45a0-a761-17f8ce556393
-á
-java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(³Ú¹şÿÿÿÿÿ8ì£”­ï1J$62d679f0-9cde-48ad-8400-b029fc630cc6
+i
+java:S2095B"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ8«âºÏò1
+i
+java:S2095;"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ8«âºÏò1
+i
+java:S2095"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ8«âºÏò1
+i
+java:S20954"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ8«âºÏò1
+i
+java:S2095&"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ8«âºÏò1
+i
+java:S2095-"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ8«âºÏò1
+»
+java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(³Ú¹şÿÿÿÿÿ8«âºÏò1
 A
-java:S6905+"Don't use the query "SELECT *".(ÿş«üÿÿÿÿ8€à¡Íñ1
+java:S6905+"Don't use the query "SELECT *".(ÿş«üÿÿÿÿ8»âºÏò1
+A
+java:S6905@"Don't use the query "SELECT *".(®Æ¶‰ûÿÿÿÿ8»âºÏò1

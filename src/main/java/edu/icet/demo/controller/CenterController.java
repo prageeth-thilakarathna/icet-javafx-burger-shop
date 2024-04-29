@@ -60,5 +60,11 @@ public class CenterController {
         return statement.executeQuery(sql);
     }
 
+    public ResultSet getAllOrders() throws SQLException {
+        String sql = "SELECT * FROM orders";
+        Connection connection = LoadDriver.getInstance().getConnection();
+        Statement statement = connection.createStatement();
+        return statement.executeQuery(sql);
+    }
 
 }

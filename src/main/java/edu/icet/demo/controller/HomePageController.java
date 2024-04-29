@@ -43,4 +43,11 @@ public class HomePageController {
         anchorPane.getChildren().clear();
         anchorPane.getChildren().add(parent);
     }
+
+    @FXML
+    private void viewOrdersAction() throws IOException {
+        Parent parent = new FXMLLoader(getClass().getResource("/view/view.fxml")).load();
+        anchorPane.getChildren().clear();
+        anchorPane.getChildren().add(parent);
+    }
 }

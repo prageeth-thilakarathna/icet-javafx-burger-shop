@@ -74,7 +74,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Button layoutX="10.0" layoutY="35.0" mnemonicParsing="false" prefWidth="250.0" style="-fx-background-color: #BB2525;" text="View Orders" textFill="WHITE">
+                        <Button layoutX="10.0" layoutY="35.0" mnemonicParsing="false" onAction="#viewOrdersAction" prefWidth="250.0" style="-fx-background-color: #BB2525;" text="View Orders" textFill="WHITE">
                            <VBox.margin>
                               <Insets bottom="10.0" top="10.0" />
                            </VBox.margin>

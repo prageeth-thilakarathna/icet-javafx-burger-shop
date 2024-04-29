@@ -31,8 +31,6 @@ public class SearchBestCustomerController implements Initializable {
     @FXML
     private AnchorPane anchorPane;
 
-    Alert alert = new Alert(Alert.AlertType.NONE);
-
     public void cancelAction() throws IOException {
         Parent load = new FXMLLoader(getClass().getResource("/view/homePage.fxml")).load();
         anchorPane.getChildren().clear();
@@ -70,9 +68,9 @@ public class SearchBestCustomerController implements Initializable {
                 }
             }
         } catch (SQLException e) {
-            alert.setAlertType(Alert.AlertType.ERROR);
-            alert.setContentText(e.getMessage());
-            alert.show();
+            CenterController.alert.setAlertType(Alert.AlertType.ERROR);
+            CenterController.alert.setContentText(e.getMessage());
+            CenterController.alert.show();
         }
         return sortBestCustomer(bestCustomers);
     }
