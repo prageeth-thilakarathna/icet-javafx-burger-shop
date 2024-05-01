@@ -1,0 +1,15 @@
+
+’
+java:S1192ƒ"IDefine a constant instead of duplicating this literal "quantity" 3 times.(à¨óñÿÿÿÿÿ8‘İ¿¥ó1J$9829fa7e-c3a1-4afc-a1bf-99447a4dc475
+
+java:S11923"JDefine a constant instead of duplicating this literal "Delivered" 3 times.(İ¨ûƒ8‘İ¿¥ó1J$b7294715-f319-4099-8d28-44b69fb9d0c8
+
+java:S11921"JDefine a constant instead of duplicating this literal "Preparing" 4 times.(ñÌä8‘İ¿¥ó1J$237463d1-0ce7-40b9-b5b3-1e21b5fd0a8d
+‹
+java:S1192ˆ"GDefine a constant instead of duplicating this literal "status" 3 times.(‰Úêï8ÚÊ§ó1J$181f02f2-4ded-4009-9f2b-23c75605afdb
+—
+java:S2095="OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(½¨“Ğúÿÿÿÿ8ÿ«Á¥ó1J$7ba53c69-78f5-49aa-a771-ded56a2c730d
+‹
+java:S1126é"BReplace this if-then-else statement by a single method invocation.(øŒ¶Òùÿÿÿÿ8Ïİ¿¥ó1J$08449da7-f012-4756-a804-e7e74bbff809
+…
+java:S1126ò"BReplace this if-then-else statement by a single method invocation.(ãûÉ)8Ïİ¿¥ó1J$2a41d4c2-1630-4006-88db-6b251b43c705

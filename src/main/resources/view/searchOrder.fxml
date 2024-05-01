@@ -11,7 +11,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane fx:id="anchorPane" prefHeight="512.0" prefWidth="768.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.demo.controller.SearchOrderController">
    <children>
       <BorderPane prefHeight="512.0" prefWidth="768.0">
@@ -36,7 +35,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="btnCancel" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#cancelAction" style="-fx-background-color: #BB2525;" text="Cancel" textFill="WHITE">
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#cancelAction" style="-fx-background-color: #BB2525;" text="Cancel" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>

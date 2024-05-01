@@ -1,19 +1,19 @@
 
-i
-java:S2095B"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ8«âºÏò1
-i
-java:S2095;"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ8«âºÏò1
-i
-java:S2095"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ8«âºÏò1
-i
-java:S20954"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ8«âºÏò1
-i
-java:S2095&"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ8«âºÏò1
-i
-java:S2095-"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ8«âºÏò1
-»
-java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(³Ú¹şÿÿÿÿÿ8«âºÏò1
-A
-java:S6905+"Don't use the query "SELECT *".(ÿş«üÿÿÿÿ8»âºÏò1
-A
-java:S6905@"Don't use the query "SELECT *".(®Æ¶‰ûÿÿÿÿ8»âºÏò1
+
+java:S20951"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ8«âºÏò1J$c47b525d-0c74-405a-99c8-9ca120be0032
+
+java:S20958"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ8«âºÏò1J$9a0df4ab-149d-4242-8518-af77d69109eb
+
+java:S2095*"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ8«âºÏò1J$528be458-50f5-42f5-acfa-5985b314dbcc
+
+java:S2095?"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ8«âºÏò1J$ac2c3aaf-4213-4d80-9beb-d45067436e36
+
+java:S2095"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ8«âºÏò1J$a02064a8-36ba-47cf-a062-b79866e50709
+
+java:S2095#"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ8«âºÏò1J$fcabbcc3-ef01-4bad-9162-4eb77177cdb0
+á
+java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(³Ú¹şÿÿÿÿÿ8«âºÏò1J$296999cc-fb3e-4e4d-b6f3-6fcf4bfb8175
+g
+java:S6905("Don't use the query "SELECT *".(ÿş«üÿÿÿÿ8»âºÏò1J$6a322a4c-6566-46c2-8f7c-81dd687bba92
+g
+java:S6905="Don't use the query "SELECT *".(®Æ¶‰ûÿÿÿÿ8»âºÏò1J$fbbe9061-1c1a-4755-891d-6fe2357accb3

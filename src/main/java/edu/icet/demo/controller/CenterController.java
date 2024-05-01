@@ -15,9 +15,6 @@ public class CenterController {
     private static final CenterController instance = new CenterController();
 
     public static final double BURGERPRICE = 500.00;
-    public static final int PREPARING = 0;
-    public static final int DELIVERED = 1;
-    public static final int CANCEL = 2;
 
     public static final DecimalFormat decimalFormat = new DecimalFormat("0.00");
     public static final Alert alert = new Alert(Alert.AlertType.NONE);

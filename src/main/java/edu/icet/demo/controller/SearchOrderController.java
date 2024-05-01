@@ -8,7 +8,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
@@ -22,8 +21,6 @@ public class SearchOrderController implements Initializable {
     private AnchorPane anchorPane;
     @FXML
     private Button btnSearchAnotherOrder;
-    @FXML
-    private Button btnCancel;
     @FXML
     private TextField inputOrderId;
     @FXML
@@ -62,7 +59,7 @@ public class SearchOrderController implements Initializable {
     }
 
     @FXML
-    private void orderIdKeyTyped(KeyEvent keyEvent) {
+    private void orderIdKeyTyped() {
         String value = inputOrderId.getText();
 
         try {
@@ -71,10 +68,10 @@ public class SearchOrderController implements Initializable {
             if (resultSet.next()) {
                 customerIdDisplay.setText("0" + resultSet.getString("customerId"));
 
-                ResultSet resultSetCust = CenterController.getInstance().getCustomerDetails(Integer.parseInt("0" + resultSet.getString("customerId")));
+                ResultSet resultSetCustomer = CenterController.getInstance().getCustomerDetails(Integer.parseInt("0" + resultSet.getString("customerId")));
 
-                if (resultSetCust.next()) {
-                    nameDisplay.setText(resultSetCust.getString("name"));
+                if (resultSetCustomer.next()) {
+                    nameDisplay.setText(resultSetCustomer.getString("name"));
                     btnSearchAnotherOrder.setDisable(false);
                     inputOrderId.setEditable(false);
 
